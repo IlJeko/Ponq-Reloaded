@@ -16,7 +16,7 @@ public class PlayerControls : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 velocity = body.velocity;
         if (Input.GetKey(moveUp))
