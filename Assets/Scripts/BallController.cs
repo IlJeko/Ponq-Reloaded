@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class BallController : MonoBehaviour
@@ -32,14 +33,21 @@ public class BallController : MonoBehaviour
         transform.position = Vector3.zero;
     }
 
-    void OnCollisionEnter(Collision coll)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (coll.collider.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Vector3 vel = Vector3.zero;
             vel.x = body.velocity.x;
-            vel.z = (body.velocity.z / 2) + (coll.collider.attachedRigidbody.velocity.z / 3);
-            body.velocity = vel;
+            float dist = this.transform.position.z - GameObject.Find("Player Paddle").transform.position.z;
+            body.velocity = new Vector3(vel.x, 0f, dist * 3f);
+        }
+        else if (collision.gameObject.CompareTag("Opponent"))
+        {
+            Vector3 vel = Vector3.zero;
+            vel.x = body.velocity.x;
+            float dist = this.transform.position.z - GameObject.Find("Opponent Paddle").transform.position.z;
+            body.velocity = new Vector3(vel.x, 0f, dist * 3f);
         }
     }
 
