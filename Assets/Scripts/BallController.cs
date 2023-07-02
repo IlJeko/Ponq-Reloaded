@@ -55,6 +55,7 @@ public class BallController : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Finish"))
         {
+            GameManager.Score(coll.gameObject.name);
             ResetBall();
             Invoke("StartBall", 2);
         }
