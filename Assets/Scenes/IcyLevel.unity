@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 1299928414}
   - component: {fileID: 1299928413}
   m_Layer: 0
-  m_Name: HUD
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8bc819a8c71224eabef299423401e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layout: {fileID: 0}
 --- !u!4 &1299928414
 Transform:
   m_ObjectHideFlags: 0
