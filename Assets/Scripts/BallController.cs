@@ -30,7 +30,7 @@ public class BallController : MonoBehaviour
     void ResetBall()
     {
         body.velocity = Vector3.zero;
-        transform.position = Vector3.zero;
+        transform.position = new Vector3(0, 0.375f, 0);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -51,4 +51,13 @@ public class BallController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider coll)
+    {
+        if (coll.gameObject.CompareTag("Finish"))
+        {
+            ResetBall();
+            Invoke("StartBall", 2);
+        }
+       
+    }
 }
