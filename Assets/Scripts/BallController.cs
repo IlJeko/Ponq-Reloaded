@@ -40,14 +40,14 @@ public class BallController : MonoBehaviour
             Vector3 vel = Vector3.zero;
             vel.x = body.velocity.x;
             float dist = this.transform.position.z - GameObject.Find("Player Paddle").transform.position.z;
-            body.velocity = new Vector3(vel.x, 0f, dist * 3f);
+            body.velocity = new Vector3(vel.x * 1.2f, 0f, dist * 3f);
         }
         else if (collision.gameObject.CompareTag("Opponent"))
         {
             Vector3 vel = Vector3.zero;
             vel.x = body.velocity.x;
             float dist = this.transform.position.z - GameObject.Find("Opponent Paddle").transform.position.z;
-            body.velocity = new Vector3(vel.x, 0f, dist * 3f);
+            body.velocity = new Vector3(vel.x * 1.2f, 0f, dist * 3f);
         }
     }
 
