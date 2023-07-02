@@ -17,4 +17,10 @@ public class MenuManager : MonoBehaviour
         EditorApplication.ExitPlaymode();
         #endif
     }
+
+    public void Update()
+    {
+        if (GameManager.playerScore == 5 || GameManager.opponentScore == 5)
+            SceneManager.LoadScene("Menu");
+    }
 }
