@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
 {
     public void Level1() => SceneManager.LoadScene("IcyLevel");
     public void Level2() => SceneManager.LoadScene("TableSoccerLevel");
+    public void Level3() => SceneManager.LoadScene("DiscLevel");
 
     public void QuitGame()
     {
