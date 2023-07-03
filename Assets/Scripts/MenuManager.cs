@@ -22,5 +22,8 @@ public class MenuManager : MonoBehaviour
     {
         if (GameManager.playerScore == 5 || GameManager.opponentScore == 5)
             SceneManager.LoadScene("Menu");
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            SceneManager.LoadScene("Menu");
     }
 }
