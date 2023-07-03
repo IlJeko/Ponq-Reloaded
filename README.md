@@ -6,3 +6,5 @@
  Controls:
  W/S - move paddle Up/Down
  Esc - Return to main menu
+
+The build file is in the root folder and is named Ponq Reloaded.exe
