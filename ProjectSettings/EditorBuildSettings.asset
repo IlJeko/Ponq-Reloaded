@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IcyLevel.unity
     guid: 92b75fe12eb48854e865474449701043
+  - enabled: 1
+    path: Assets/Scenes/TableSoccerLevel.unity
+    guid: 7573f2cc2560db449ada037e59a7eb4d
+  - enabled: 1
+    path: Assets/Scenes/DiscLevel.unity
+    guid: 2ecb9e3066e4eb749a15d7b588a06a6d
   m_configObjects: {}
