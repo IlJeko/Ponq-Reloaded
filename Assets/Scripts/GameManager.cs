@@ -18,11 +18,11 @@ public class GameManager : MonoBehaviour
     {
         if (goalId == "PlayerGoal")
         {
-            playerScore++;
+            opponentScore++;
         }
         else
         {
-            opponentScore++;
+            playerScore++;
         }
     }
 }

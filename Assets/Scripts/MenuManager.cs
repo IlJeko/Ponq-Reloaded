@@ -23,9 +23,17 @@ public class MenuManager : MonoBehaviour
     public void Update()
     {
         if (GameManager.playerScore == 5 || GameManager.opponentScore == 5)
+        {
             SceneManager.LoadScene("Menu");
+            GameManager.playerScore = 0;
+            GameManager.opponentScore = 0;
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
             SceneManager.LoadScene("Menu");
+            GameManager.playerScore = 0;
+            GameManager.opponentScore = 0;
+        }
     }
 }
