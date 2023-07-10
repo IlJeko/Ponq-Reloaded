@@ -6,6 +6,7 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     private Rigidbody body;
+    private float bounceForce = 1.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,19 +36,24 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (body.velocity.magnitude > 25f)
+            bounceForce = 1.0f;
+        else
+            bounceForce = 1.2f;
+        
         if (collision.gameObject.CompareTag("Player"))
         {
             Vector3 vel = Vector3.zero;
             vel.x = body.velocity.x;
             float dist = this.transform.position.z - GameObject.Find("Player Paddle").transform.position.z;
-            body.velocity = new Vector3(vel.x * 1.2f, 0f, dist * 3f);
+            body.velocity = new Vector3(vel.x * bounceForce, 0f, dist * 3f);
         }
         else if (collision.gameObject.CompareTag("Opponent"))
         {
             Vector3 vel = Vector3.zero;
             vel.x = body.velocity.x;
             float dist = this.transform.position.z - GameObject.Find("Opponent Paddle").transform.position.z;
-            body.velocity = new Vector3(vel.x * 1.2f, 0f, dist * 3f);
+            body.velocity = new Vector3(vel.x * bounceForce, 0f, dist * 3f);
         }
     }
 
